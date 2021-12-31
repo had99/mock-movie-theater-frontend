@@ -1,0 +1,63 @@
+<div class="main-contaniner">
+    <h2 class="div-title">Employee List</h2>
+    <hr />
+    <div class="div-button-add">
+        <button mat-raised-button color="primary">
+            <mat-icon style="font-size: 20px;">add_circle</mat-icon> Add new
+        </button>
+    </div>
+    <div class="div-input-search">
+        <mat-label for="search" style="font-weight: 500; margin-right: 15px;">Search: </mat-label>
+        <mat-form-field class="form-group search-input" appearance="outline">
+            <input matInput type="search" formControlName="search" name="search" />
+        </mat-form-field>
+    </div>
+    <div class="table-div" style="background-color: blue;">
+        <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="#">
+                <th mat-header-cell *matHeaderCellDef>#</th>
+                <td mat-cell *matCellDef="let element">{{element.id}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Username">
+                <th mat-header-cell *matHeaderCellDef>Username</th>
+                <td mat-cell *matCellDef="let element">{{element.userName}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Full name">
+                <th mat-header-cell *matHeaderCellDef>Full name</th>
+                <td mat-cell *matCellDef="let element">{{element.fullName}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Date of birth">
+                <th mat-header-cell *matHeaderCellDef>Date of birth</th>
+                <td mat-cell *matCellDef="let element">{{element.dateOfBirth}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Gender">
+                <th mat-header-cell *matHeaderCellDef>Gender</th>
+                <td mat-cell *matCellDef="let element">{{element.gender}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Email">
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let element">{{element.email}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Identity card">
+                <th mat-header-cell *matHeaderCellDef>Identity card</th>
+                <td mat-cell *matCellDef="let element">{{element.identityCard}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Phone number">
+                <th mat-header-cell *matHeaderCellDef>Phone number</th>
+                <td mat-cell *matCellDef="let element">{{element.phoneNumber}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Address">
+                <th mat-header-cell *matHeaderCellDef>Address</th>
+                <td mat-cell *matCellDef="let element">{{element.address}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Register date">
+                <th mat-header-cell *matHeaderCellDef>Register date</th>
+                <td mat-cell *matCellDef="let element">{{element.registerDate}}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="nameColumn"></tr>
+            <tr mat-row *matRowDef="let row; columns: nameColumn"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+</div>

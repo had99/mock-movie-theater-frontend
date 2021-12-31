@@ -1,0 +1,39 @@
+.main-container {
+    margin: 16px 16px 100px 16px;
+    width: auto;
+    height: 2050px;
+}
+
+.div-title {
+    text-align: center;
+}
+
+.note{
+    color: #ff0000;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 25px;
+}
+
+.button-action {
+    margin-top: 20px;
+}
+
+.div-form {
+    margin-top: 20px;
+}
+
+
+.div-avatar {
+    display: flex;
+    justify-content: center;
+}
+    
+  .example-header-image {
+      background-image: url('http://www.movienewsletters.net/photos/VNM_198438R1.jpg');
+}

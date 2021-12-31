@@ -1,0 +1,51 @@
+<div class="main-container mat-elevation-z8">
+    <h2 class="div-title">Edit Promotion Information</h2>
+    <hr />
+    <div class="div-avatar">
+        <mat-card class="example-card">
+            <img mat-card-image src="https://www.webchanakya.com/wp-content/uploads/2016/02/Online-Promotion-secrets-to-make-your-next-movie-a-blockbuster.png"
+                alt="Photo of a Shiba Inu">
+        </mat-card>
+    </div>
+    <div class="div-form">
+        <form [formGroup]="editPromotionForm" (ngSubmit)="editPromotionInformation()">
+            <mat-label for="title" style="font-weight: 500;">Title:</mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="title" name="title"
+                    placeholder="Title" />
+            </mat-form-field>
+            <mat-label for="startTime" style="font-weight: 500;">Start Time: </mat-label>
+            <mat-form-field class="full-width form-group" appearance="outline">
+                <input matInput [matDatepicker]="startTime" placeholder="Start Time">
+                <mat-datepicker-toggle matSuffix [for]="startTime"></mat-datepicker-toggle>
+                <mat-datepicker #startTime></mat-datepicker>
+            </mat-form-field>
+            <mat-label for="endTime" style="font-weight: 500;">End Time: </mat-label>
+            <mat-form-field class="full-width form-group" appearance="outline">
+                <input matInput [matDatepicker]="endTime" placeholder="End Time">
+                <mat-datepicker-toggle matSuffix [for]="endTime"></mat-datepicker-toggle>
+                <mat-datepicker #endTime></mat-datepicker>
+            </mat-form-field>
+            <mat-label for="discountLevel" style="font-weight: 500;">Discount Level: </mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="number" formControlName="discountLevel" name="discountLevel"
+                    placeholder="Discount Level" />
+            </mat-form-field>
+            <mat-label for="detail" style="font-weight: 500;">Detail: </mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="detail" name="detail"
+                    placeholder="Detail" />
+            </mat-form-field>
+            <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+                multiple="multiple" accept="image/*" />
+            <div class="button-action">
+                <button mat-raised-button color="primary">
+                    <mat-icon style="font-size: 20px;">done</mat-icon> Add
+                </button>
+                <button mat-raised-button style="margin-left: 15px;" color="primary">
+                    <mat-icon style="font-size: 20px;">clear</mat-icon>Back
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+<div class="main-container">
+    <h2 class="div-title">Movie detail: </h2>
+    <hr/>
+    <div class="div-avatar">
+        <mat-card class="example-card">
+            <img mat-card-image src="http://www.movienewsletters.net/photos/VNM_198438R1.jpg" style="width: 100px;" alt="Photo of avengers infinity war">
+        </mat-card>
+    </div>
+    <div class="div-form">
+        <form [formGroup]="editMovieInformationForm" (ngSubmit)="editMovieInfomation()">
+            <mat-label for="movieNameENG" style="font-weight: 500;">Movie name(ENG): <strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="movieNameENG" name="movieNameENG"
+                    placeholder="Movie name(ENG)" />
+            </mat-form-field>
+            <mat-label for="movieNameVN" style="font-weight: 500;">Movie name(VN): <strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="movieNameVN" name="movieNameVN"
+                    placeholder="Movie name(VN)" />
+            </mat-form-field>
+            <mat-label for="fromDate" style="font-weight: 500;">From date:<strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="full-width form-group" appearance="outline">
+                <input matInput [matDatepicker]="fromDate" placeholder="dd/mm/yyyy">
+                <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+                <mat-datepicker #fromDate></mat-datepicker>
+            </mat-form-field>
+            <mat-label for="toDate" style="font-weight: 500;">To date:<strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="full-width form-group" appearance="outline">
+                <input matInput [matDatepicker]="toDate" placeholder="dd/mm/yyyy">
+                <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
+                <mat-datepicker #toDate></mat-datepicker>
+            </mat-form-field>
+            <mat-label for="actor" style="font-weight: 500;">Actor: <strong class="note">*</strong></mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="actor" name="actor" placeholder="Actor" />
+            </mat-form-field>
+            <mat-label for="movieProductionCompany" style="font-weight: 500;">Movie Production Company: <strong
+                    class="note">*</strong></mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="movieProductionCompany" name="movieProductionCompany"
+                    placeholder="Movie Production Company" />
+            </mat-form-field>
+            <mat-label for="director" style="font-weight: 500;">Director: <strong class="note">*</strong></mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="director" name="director" placeholder="Director" />
+            </mat-form-field>
+            <mat-label for="duration" style="font-weight: 500;">Duration: <strong class="note">*</strong></mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="duration" name="duration" placeholder="Duration" />
+            </mat-form-field>
+            <mat-label for="version" style="font-weight: 500;">Version: <strong class="note">*</strong></mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="version" name="version" placeholder="Version" />
+            </mat-form-field>
+            <mat-label for="types" style="font-weight: 500;">Type: <strong class="note">*</strong></mat-label>
+            <!-- <section>
+                <p><mat-checkbox formControlName="hanhdong">Hành động</mat-checkbox></p>
+                <p><mat-checkbox formControlName="haihuoc">Hài hước</mat-checkbox></p>
+                <p><mat-checkbox formControlName="langman">Lãng mạn</mat-checkbox></p>
+                <p><mat-checkbox formControlName="tinhcam">Tình cảm</mat-checkbox></p>
+                <p><mat-checkbox formControlName="vientuong">Viễn tưởng</mat-checkbox></p>
+                <p><mat-checkbox formControlName="chientranh">Chiến tranh</mat-checkbox></p>
+                <p><mat-checkbox formControlName="kiemhiep">Kiếm hiệp</mat-checkbox></p>
+                <p><mat-checkbox formControlName="amnhac">Âm nhạc </mat-checkbox></p>
+                <p><mat-checkbox formControlName="kinhdi">Kinh dị</mat-checkbox></p>
+                <p><mat-checkbox formControlName="phieuluu">Phiêu lưu</mat-checkbox></p>
+                <p><mat-checkbox formControlName="tamly18plus">Tâm lý 18+</mat-checkbox></p>
+                <p><mat-checkbox formControlName="hoathinh">Hoạt hình</mat-checkbox></p>
+            </section> -->
+            <!-- <ul formArrayName="types">
+                <li [formGroupName]="i" *ngFor="let item of typeMovieForm.controls?.['types']?.controls; let i = index">
+                  <input type="checkbox" formControlName="checked" />  {{types[i].name}}
+                </li>
+              </ul> -->
+              <div *ngFor="let dataTypes of DataTypeMovies; let i=index">
+                <label>
+                  <input type="checkbox" [value]="dataTypes.value" (change)="onCheckBonxChangeTypeMovie($event)" />
+                  {{dataTypes.name}}
+                </label>
+              </div>
+            <br>
+            <mat-label for="cinemaRoom" style="font-weight: 500;">Cinema room: <strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="cinemaRoom" name="cinemaRoom" placeholder="Cinema room" />
+            </mat-form-field>
+            <mat-label for="schedule" style="font-weight: 500;">Schedule: <strong class="note">*</strong></mat-label>
+            <div *ngFor="let dataSchedule of DataSchedules; let i=index">
+                <label>
+                  <input type="checkbox" [value]="dataSchedule.value" (change)="onCheckBonxChangeScheduleMovie($event)" />
+                  {{dataSchedule.time}}
+                </label>
+              </div>
+            <br>
+            <mat-label for="content" style="font-weight: 500;">Content: <strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <textarea matInput type="text" formControlName="content" name="content"
+                    placeholder="Content"></textarea>
+            </mat-form-field>
+            <mat-label for="image" style="font-weight: 500;">Image: <strong class="note">*</strong></mat-label>
+            <br>
+            <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+                multiple="multiple" accept="image/*" />
+            <div class="button-action">
+                <button mat-raised-button color="primary">
+                    <mat-icon style="font-size: 20px;">done</mat-icon> Save
+                </button>
+                <button mat-raised-button style="margin-left: 15px;" color="primary">
+                    <mat-icon style="font-size: 20px;">clear</mat-icon>Back
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

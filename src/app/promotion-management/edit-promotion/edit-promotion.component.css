@@ -1,0 +1,38 @@
+.main-container {
+    margin: 16px 16px 16px 16px;
+    width: auto;
+    height: 1100px;
+}
+
+.div-form {
+    margin: 16px 16px 16px 16px;
+    height: 620px;
+}
+.div-title {
+    text-align: center;
+}
+
+.note{
+    color: #ff0000;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 25px;
+}
+
+.button-action {
+    margin-top: 20px;
+}
+
+.div-form {
+    margin-top: 20px;
+}
+
+.div-avatar {
+    display: flex;
+    justify-content: center;
+}

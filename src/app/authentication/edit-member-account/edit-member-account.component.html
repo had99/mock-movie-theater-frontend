@@ -1,0 +1,81 @@
+<div class="main-container">
+    <h2 class="div-title">Account Information</h2>
+    <hr />
+    <div class="div-avatar">
+        <mat-card class="example-card">
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                alt="Photo of a Shiba Inu">
+        </mat-card>
+    </div>
+    <div class="div-form">
+        <form [formGroup]="editInformationForm" (ngSubmit)="editInformationAccount()">
+            <mat-label for="account" style="font-weight: 500;">Account:<strong class="note">*</strong></mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="account" name="account" readonly />
+            </mat-form-field>
+            <mat-label for="password" style="font-weight: 500;">Password:<strong class="note">*</strong></mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="password" formControlName="password" name="password" />
+            </mat-form-field>
+            <mat-label for="confirmPassword" style="font-weight: 500;">Confirm password:<strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="password" formControlName="confirmPassword" name="confirmPassword" />
+            </mat-form-field>
+            <mat-label for="fullName" style="font-weight: 500;">Full name:<strong class="note">*</strong></mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="fullName" name="fullName" />
+            </mat-form-field>
+            <mat-label for="dateOfBirth" style="font-weight: 500;">Date of birth:<strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="full-width form-group" appearance="outline">
+                <input matInput [matDatepicker]="dateOfBirth">
+                <mat-datepicker-toggle matSuffix [for]="dateOfBirth"></mat-datepicker-toggle>
+                <mat-datepicker #dateOfBirth></mat-datepicker>
+            </mat-form-field>
+            <div style="margin-bottom: 20px;">
+                <mat-label for="gender" style="font-weight: 500;">Gender:<strong class="note">*</strong>
+                </mat-label>
+                <br>
+                <mat-radio-group class="form-group" aria-label="gender" formControlName="gender" name="gender">
+                    <mat-radio-button value="Nam">Nam</mat-radio-button>
+                    <mat-radio-button value="Nữ">Nữ</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <mat-label for="identityCard" style="font-weight: 500;">Identity card:<strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="number" formControlName="identityCard" name="identityCard" readonly />
+            </mat-form-field>
+            <mat-label for="email" style="font-weight: 500;">Email:<strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="email" formControlName="email" name="email" />
+            </mat-form-field>
+            <mat-label for="address" style="font-weight: 500;">Address:<strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="text" formControlName="address" name="address" />
+            </mat-form-field>
+            <mat-label for="phoneNumber" style="font-weight: 500;">Phone number:<strong class="note">*</strong>
+            </mat-label>
+            <mat-form-field class="form-group full-width" appearance="outline">
+                <input matInput type="number" formControlName="phoneNumber" name="phoneNumber" />
+            </mat-form-field>
+            <mat-label for="image" style="font-weight: 500;">Image:<strong class="note">*</strong></mat-label>
+            <br>
+            <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+                multiple="multiple" accept="image/*" />
+            <!-- <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" multiple="multiple"
+        accept="image/*" /> -->
+            <div class="button-action">
+                <button mat-raised-button color="primary">
+                    <mat-icon style="font-size: 20px;">add</mat-icon> Save
+                </button>
+                <button mat-raised-button style="margin-left: 15px;" color="primary">
+                    <mat-icon style="font-size: 20px;">fast_rewind</mat-icon>Back
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

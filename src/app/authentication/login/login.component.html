@@ -1,0 +1,30 @@
+<div class="main-container">
+    <h2>LOGIN</h2>
+    <div class="div-login-form">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <mat-form-field class="example-full-width form-group" appearance="fill">
+                <mat-label for="username">Username</mat-label>
+                <input matInput type="text" formControlName="username" placeholder="Enter username" name="username"
+                    id="username" aria-describedby="username-address-help"
+                    [ngClass]="{ 'ng-invalid ng-dirty': submitted && f['username'].errors}" />
+                <mat-error *ngIf="submitted && f['username'].errors" id="username-address-help">
+                    Username is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width form-group" appearance="fill">
+                <mat-label for="password">Password</mat-label>
+                <input matInput type="password" formControlName="password" name="password" />
+            </mat-form-field>
+            <div style="align-items: center; text-align: center; margin-top: 20px;">
+                <button mat-raised-button color="primary" style="width: 100%;">
+                    <mat-icon style="font-size: 20px;">exit_to_app</mat-icon>Login
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="text-register">
+    <span>
+        <p>Don't have an acoount yet? <a href="authentication/register">Register now!</a></p>
+    </span>
+</div>
