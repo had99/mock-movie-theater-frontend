@@ -8,9 +8,9 @@ import { MatTableDataSource, _MatTableDataSource } from '@angular/material/table
 })
 export class ViewEmployeeListComponent implements OnInit {
 
-  dataSource = new _MatTableDataSource<Employee>(employees);
+  dataSource = new MatTableDataSource<Employee>(employees);
   nameColumn: string [] = [
-    '#',
+    'Id',
     'Username',
     'Full name',
     'Date of birth',
@@ -21,7 +21,7 @@ export class ViewEmployeeListComponent implements OnInit {
     'Address',
     'Register date',
     'Edit',
-    'Delete'
+    'Delete',
   ]
   constructor() { }
 

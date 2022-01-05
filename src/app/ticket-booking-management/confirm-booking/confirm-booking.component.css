@@ -1,0 +1,17 @@
+.main-container {
+    margin: 16px 16px 100px 16px;
+    width: auto;
+    height: auto;
+}
+
+.div-information {
+    margin: 16px 16px 16px 16px;
+}
+
+.div-content {
+    padding-left: 200px;
+}
+
+.div-title {
+    text-align: center;
+}

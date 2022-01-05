@@ -1,7 +1,7 @@
 .main-container {
     margin: 16px 16px 100px 16px;
     width: auto;
-    height: 1200px;
+    height: auto;
 }
 
 .div-title {
@@ -32,3 +32,8 @@
     position: relative;
     height: 45px;
 } */
+
+.table-div {
+    margin: 16px 16px 16px 16px;
+    margin-top: 15px;
+}

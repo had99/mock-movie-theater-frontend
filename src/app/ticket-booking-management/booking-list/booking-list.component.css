@@ -8,10 +8,6 @@
     text-align: center;
 }
 
-.div-button-add {
-    margin: 16px 16px 16px 16px;
-}
-
 .search-input {
     width: 15%;
 }
@@ -27,4 +23,20 @@
 .table-div {
     margin: 16px 16px 16px 16px;
     margin-top: 15px;
+}
+
+.text-status-one {
+    background-color: rgba(0, 122, 245, 0.959);
+    color: white;
+    height: 40px;
+    width: 150px;
+    border-radius: 4px;
+}
+
+.text-status-two {
+    background-color: rgb(43, 175, 54);
+    color: white;
+    height: 40px;
+    width: 80px;
+    border-radius: 4px;
 }

@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'employee-management', loadChildren: () => import('./employee-management/employee-management.module').then((m) => m.EmployeeManagementModule) },
   { path: 'movie-management', loadChildren: () => import('./movie-management/movie-management.module').then((m) => m.MovieManagementModule) },
   { path: 'promotion-management', loadChildren: () => import('./promotion-management/promotion-management.module').then((m) => m.PromotionManagementModule) },
+  { path: 'ticket-booking-management', loadChildren:() => import('./ticket-booking-management/ticket-booking-management.module').then((m) =>m.TicketBookingManagementModule)},
 ];
 
 @NgModule({
